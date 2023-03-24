@@ -44,6 +44,18 @@ export default {
   font-weight: 900;
 }
 
+@font-face {
+  font-family: 'cascade';
+  src: url('./assets/fonts/cascade/Cascade.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'sui-generis';
+  src: url('./assets/fonts/sui-generis/sui-generis.otf');
+  font-weight: 400;
+}
+
 html, body {
   padding: 0;
   margin: 0;
