@@ -4,7 +4,7 @@
         <navbar></navbar>
         <page-slider></page-slider>
         <upcoming-parties></upcoming-parties>
-        <section-header title="Galeria zdjęć z ostatnich imprez"></section-header>
+        <mini-photo-gallery></mini-photo-gallery>
         <promo-section></promo-section>
         <about-club></about-club>
         <transport-cards></transport-cards>
@@ -18,7 +18,7 @@
 import Navbar from '@/components/Navbar.vue';
 import PageSlider from '@/components/PageSlider.vue';
 import UpcomingParties from '@/page_parts/UpcomingParties.vue';
-import SectionHeader from '@/components/SectionHeader.vue';
+import MiniPhotoGallery from '@/page_parts/MiniPhotoGallery.vue';
 import AboutClub from '@/page_parts/AboutClub.vue';
 import TransportCards from '@/page_parts/TransportCards.vue';
 import NewsletterBar from '@/components/NewsletterBar.vue';
@@ -32,13 +32,13 @@ export default {
         Navbar,
         PageSlider,
         UpcomingParties,
-        SectionHeader,
         NewsletterBar,
         AppFooter,
         AboutClub,
         TransportCards,
         ContactWithMap,
-        PromoSection
+        PromoSection,
+        MiniPhotoGallery
     }
 }
 </script>

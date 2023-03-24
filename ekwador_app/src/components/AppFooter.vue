@@ -20,6 +20,7 @@
                         </li>
                     </ul>
                 </div>
+                <img src="../assets/images/scroll_to_top_icon.png" class="scroll-icon" @click="scrollToTop()">
             </div>
         </div>
     </div>
@@ -33,11 +34,21 @@ export default {
             // MOCK HTTP REQUEST RESPONSE
             navbarItems: navItems
         }
+    },
+    methods: {
+        scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
     }
 }
 </script>
 
 <style lang="scss">
+    .scroll-icon {
+        display: block;
+        width: 1.5vw;
+        cursor: pointer;
+    }
     .footer {
         background-color: #0652dd;
         height: 70px;
