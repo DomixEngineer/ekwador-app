@@ -8,12 +8,13 @@
                 </div>
                 <div class="navbar__container__menu">
                     <ul class="navbar__container__menu__list">
-                        <li class="navbar__container__menu__list__item">start</li>
-                        <li class="navbar__container__menu__list__item">imprezy</li>
-                        <li class="navbar__container__menu__list__item">sklep</li>
-                        <li class="navbar__container__menu__list__item">media</li>
-                        <li class="navbar__container__menu__list__item">aktualności</li>
-                        <li class="navbar__container__menu__list__item">kontakt</li>
+                        <li 
+                            class="navbar__container__menu__list__item"
+                            v-for="navItem in navbarItems"
+                            :key="navItem"
+                        >
+                        {{ navItem.name }}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -22,8 +23,14 @@
 </template>
 
 <script>
+import navItems from '../mock/navigation.js'
 export default {
-    
+    data() {
+        return {
+            // MOCK HTTP REQUEST RESPONSE
+            navbarItems: navItems
+        }
+    }
 }
 </script>
 
@@ -37,20 +44,18 @@ export default {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            &__brand {
-                img {}
-            }
             &__menu {
                 max-width: 650px;
                 width: 100%;
                 &__list {
                     list-style-type: none;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: flex-end;
                     width: 100%;
                     margin: 0;
                     padding: 0;
                     &__item {
+                        margin-right: 20px;
                         color: white;
                         font-size: 20px;
                         text-transform: uppercase;
