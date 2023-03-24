@@ -4,7 +4,7 @@
         <div class="container">
             <div class="navbar__container">
                 <div class="navbar__container__brand">
-                    <img src="../assets/ekwador_nav_logo.png" alt="" />
+                    <img src="../assets/images/ekwador_nav_logo.png" alt="" />
                 </div>
                 <div class="navbar__container__menu">
                     <ul class="navbar__container__menu__list">
@@ -41,16 +41,21 @@ export default {
                 img {}
             }
             &__menu {
+                max-width: 650px;
+                width: 100%;
                 &__list {
                     list-style-type: none;
                     display: flex;
                     justify-content: space-between;
-                    max-width: 640px;
                     width: 100%;
+                    margin: 0;
+                    padding: 0;
                     &__item {
                         color: white;
                         font-size: 20px;
                         text-transform: uppercase;
+                        font-family: 'lato';
+                        cursor: pointer;
                     }
                 }
             }
