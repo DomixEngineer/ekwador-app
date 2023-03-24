@@ -1,11 +1,18 @@
+<!-- eslint-disable vue/no-dupe-keys -->
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div class="container">
         <div class="section-header">
             <h1 class="section-header__header">{{ title }}</h1>
             <div class="section-header__decorator">
-                <div class="section-header__decorator__left-bar"></div>
-                <div class="section-header__decorator__right-bar"></div>
+                <div 
+                    class="section-header__decorator__left-bar" 
+                    :style="leftBarWidthPercentage">
+                </div>
+                <div 
+                    class="section-header__decorator__right-bar" 
+                    :style="rightBarWidthPercentage">
+                </div>
             </div>
         </div>
     </div>
@@ -18,6 +25,24 @@ export default {
             type: String,
             required: false,
             default: 'Page Section'
+        },
+        leftBarWidth: {
+            type: Number,
+            required: false,
+            default: 50
+        },
+        rightBarWidth: {
+            type: Number,
+            required: false,
+            default: 50
+        }
+    },
+    computed: {
+        leftBarWidthPercentage() {
+            return `width: ${this.leftBarWidth}%`;
+        },
+        rightBarWidthPercentage() {
+            return `width: ${this.rightBarWidth}%`;
         }
     }
 }
@@ -41,12 +66,10 @@ export default {
             display: flex;
             &__left-bar {
                 height: inherit;
-                width: 61%;
                 background: #fcff15;
             }
             &__right-bar {
                 height: inherit;
-                width: 39%;
                 background: #107ef1
             }
         }
