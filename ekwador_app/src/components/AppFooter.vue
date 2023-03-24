@@ -11,18 +11,31 @@
                 </div>
                 <div class="footer__container__menu">
                     <ul class="footer__container__menu__list">
-                        <li class="footer__container__menu__list__item">start</li>
-                        <li class="footer__container__menu__list__item">imprezy</li>
-                        <li class="footer__container__menu__list__item">sklep</li>
-                        <li class="footer__container__menu__list__item">media</li>
-                        <li class="footer__container__menu__list__item">aktualności</li>
-                        <li class="footer__container__menu__list__item">kontakt</li>
+                        <li 
+                            class="footer__container__menu__list__item"
+                            v-for="navbarItem in navbarItems"
+                            :key="navbarItem"
+                        >
+                        {{ navbarItem.name }}
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+import navItems from '../mock/navigation.js'
+export default {
+    data() {
+        return {
+            // MOCK HTTP REQUEST RESPONSE
+            navbarItems: navItems
+        }
+    }
+}
+</script>
 
 <style lang="scss">
     .footer {
@@ -51,7 +64,7 @@
                 &__list {
                     list-style: none;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: flex-end;
                     width: 100%;
                     margin: 0;
                     padding: 0;
@@ -61,6 +74,7 @@
                         text-transform: uppercase;
                         font-size: 18px;
                         cursor: pointer;
+                        margin-right: 20px;
                     }
                 }
             }
