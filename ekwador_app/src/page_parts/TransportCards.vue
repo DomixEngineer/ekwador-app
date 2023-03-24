@@ -1,22 +1,29 @@
 <template>
-    <div class="container flex-container">
-        <transport-card 
-            v-for="transport in transportCards" 
-            :key="transport"
-            :picture="transport.picture"
-            :title="transport.title"
-            :subTitle="transport.subtitle"
-            >
-        </transport-card>
+    <div>
+        <div class="container">
+            <section-header title="transport"></section-header>
+        </div>
+        <div class="container flex-container">
+            <transport-card 
+                v-for="transport in transportCards" 
+                :key="transport"
+                :picture="transport.picture"
+                :title="transport.title"
+                :subTitle="transport.subtitle"
+                >
+            </transport-card>
+        </div>
     </div>
 </template>
 
 <script>
 import TransportCard from '@/components/TransportCard.vue'
+import SectionHeader from '@/components/SectionHeader.vue'
 
 export default {
     components: {
-        TransportCard
+        TransportCard,
+        SectionHeader
     },
     data() {
         return {
