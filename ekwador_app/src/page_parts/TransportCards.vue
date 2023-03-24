@@ -19,6 +19,7 @@
 <script>
 import TransportCard from '@/components/TransportCard.vue'
 import SectionHeader from '@/components/SectionHeader.vue'
+import TransportCards from '../mock/transport.js'
 
 export default {
     components: {
@@ -27,19 +28,12 @@ export default {
     },
     data() {
         return {
-            transportCards: [
-                {
-                    picture: 'transport_katowice.png',
-                    title: 'ekwador manieczki',
-                    subtitle: 'transport z katowic, opola oraz wrocławia'
-                },
-                {
-                    picture: 'transport_poznan.png',
-                    title: 'ekwador manieczki',
-                    subtitle: 'transport z poznania'
-                }
-            ]
+            // MOCK HTTP REQUEST RESPONSE
+            transportCards: TransportCards
         }
+    },
+    methods: {
+        getTransportDetails() {}
     }
 }
 </script>
