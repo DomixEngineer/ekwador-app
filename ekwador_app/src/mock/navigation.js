@@ -1,8 +1,9 @@
 export default [
     {
         id: 0,
-        name: 'start',
-        link: '/start'
+        name: 'Home',
+        link: '/',
+        translated: 'start'
     },
     // {
     //     id: 1,
@@ -26,7 +27,8 @@ export default [
     // },
     {
         id: 5,
-        name: 'kontakt',
-        link: '/contact'
+        name: 'Contact',
+        link: '/contact',
+        translated: 'kontakt'
     }
 ]

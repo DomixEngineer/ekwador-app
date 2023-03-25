@@ -1,6 +1,10 @@
 <template>
   <navbar></navbar>
-  <router-view></router-view>
+  <router-view v-slot="{ Component }">
+    <transition name="route">
+      <component :is="Component" />
+    </transition>
+  </router-view>
   <app-footer></app-footer>
 </template>
 
@@ -62,6 +66,11 @@ export default {
   font-weight: 400;
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 html, body {
   padding: 0;
   margin: 0;
@@ -71,5 +80,21 @@ html, body {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+}
+
+/* Route animations */
+.route-enter-from {
+  opacity: 0;
+  transform: translateX(100px)
+}
+.route-enter-active {
+  transition: all 0.03s ease-out;
+}
+.route-leave-to {
+  opacity: 0;
+  transform: translateX(-100px)
+}
+.route-leave-active {
+  transition: all 0.3s ease-in;
 }
 </style>

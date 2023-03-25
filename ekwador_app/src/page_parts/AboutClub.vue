@@ -3,8 +3,8 @@
         <div class="container">
             <section-header 
                 title="o klubie"
-                leftBarWidth=20
-                rightBarWidth=80
+                :leftBarWidth=20
+                :rightBarWidth=80
             ></section-header>
         </div>
         <div class="container flex-container about-club">

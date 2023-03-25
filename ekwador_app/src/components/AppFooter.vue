@@ -16,7 +16,9 @@
                             v-for="navbarItem in navbarItems"
                             :key="navbarItem"
                         >
-                        {{ navbarItem.name }}
+                        <router-link :to="{ name: navbarItem.name, params: {} }">
+                            {{ navbarItem.translated }}
+                        </router-link>
                         </li>
                     </ul>
                 </div>

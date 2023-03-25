@@ -3,8 +3,8 @@
         <div class="container">
             <section-header 
                 title="Nadchodzące imprezy"
-                leftBarWidth=30 
-                rightBarWidth=70
+                :leftBarWidth=30 
+                :rightBarWidth=70
             ></section-header>
         </div>
         <div class="container party-posters">
