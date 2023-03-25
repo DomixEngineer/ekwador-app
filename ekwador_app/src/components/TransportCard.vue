@@ -16,6 +16,7 @@
 
 <script>
 export default {
+    name: 'SingleTransportCard',
     props: {
         picture: {
             type: String,

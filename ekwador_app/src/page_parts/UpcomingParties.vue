@@ -10,6 +10,7 @@
         <div class="container party-posters">
             <single-party-poster
             v-for="party in parties"
+            :partyId="party.id"
             :key="party"
             :partyTitle="party.title"
             :partyDate="party.date"

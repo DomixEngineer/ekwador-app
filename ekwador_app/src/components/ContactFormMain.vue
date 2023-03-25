@@ -46,6 +46,7 @@
 
 <script>
 export default {
+    name: 'ContactForm',
     data() {
         return {
             contactFormSent: false,

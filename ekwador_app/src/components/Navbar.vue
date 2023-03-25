@@ -27,6 +27,7 @@
 <script>
 import navItems from '../mock/navigation.js'
 export default {
+    name: 'AppNavbar',
     data() {
         return {
             // MOCK HTTP REQUEST RESPONSE

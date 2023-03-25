@@ -11,6 +11,7 @@
 
 <script>
 export default {
+    name: 'SmallColumnTextContent',
     props: {
         title: {
             type: String,

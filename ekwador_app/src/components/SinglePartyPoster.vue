@@ -9,7 +9,7 @@
                 <h1 class="single-poster__hover-overlay__border-box-decor__header">Ekwador Manieczki</h1>
                 <h2 class="single-poster__hover-overlay__border-box-decor__subheader">"{{ partyTitle }}"</h2>
                 <h3 class="single-poster__hover-overlay__border-box-decor__date">{{ partyDate }}</h3>
-                <div class="single-poster__hover-overlay__border-box-decor__btn">Zobacz</div>
+                <div class="single-poster__hover-overlay__border-box-decor__btn" @click="redirectToParty()">Zobacz</div>
             </div>
         </div>
     </div>
@@ -17,7 +17,13 @@
 
 <script>
 export default {
+    name: 'SinglePartyPoster',
     props: {
+        partyId: {
+            type: Number,
+            required: false,
+            default: 1
+        },
         pictureLink: {
             type: String,
             required: false,
@@ -37,6 +43,9 @@ export default {
     methods: {
         renderImage() {
             return require(`../assets/images/party_posters/2023/${this.pictureLink}`)
+        },
+        redirectToParty() {
+            this.$router.push({ name: 'PartyPreview', params: { party: this.partyId } })
         }
     }
 }

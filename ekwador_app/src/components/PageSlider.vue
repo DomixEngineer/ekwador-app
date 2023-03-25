@@ -51,7 +51,9 @@ export default {
     data() {
         return {
             currentSlide: 0,
-            slides: 2
+            slides: 2,
+            autoplay: false,
+            autoplayTime: 2000
         }
     },
     methods: {
@@ -70,6 +72,14 @@ export default {
         goToSlide(slide) {
             this.currentSlide = slide
         }
+    },
+    mounted() {
+        // MOCK AUTOPLAY SLIDER FUNCTION
+        if (this.autoplay) {
+            setInterval(() => {
+                this.next()
+            }, this.autoplayTime)
+        }
     }
 }
 </script>
@@ -86,6 +96,9 @@ export default {
                 top: 0;
                 width: 100%;
                 height: 100vh;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
         }
         &__arrows {
@@ -109,15 +122,13 @@ export default {
     }
     .first_slide {
         background-image: url('../assets/images/slider/first_slide_bg.png');
-        background-position: center;
+        
     }
     .second_slide {
         background-image: url('../assets/images/slider/second_slide_bg.jpg');
-        background-position: center;
     }
     .third_slide {
         background-image: url('../assets/images/slider/third_slide_bg.jpg');
-        background-position: center;
     }
     .active {
         left: 0;

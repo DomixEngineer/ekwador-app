@@ -31,6 +31,7 @@
 <script>
 import navItems from '../mock/navigation.js'
 export default {
+    name: 'AppFooter',
     data() {
         return {
             // MOCK HTTP REQUEST RESPONSE
