@@ -21,15 +21,21 @@ photos['column_2'] = [
 ]
 photos['column_3'] = [
     {
-        src: "photo_3.png",
+        src: 'photo_3.png',
         alt: 'Ekwador Manieczki'
     },
     {
-        src: "photo_6.png",
+        src: 'photo_6.png',
         alt: 'Ekwador Manieczki'
     },
     {
         src: "photo_7.png",
+        alt: 'Ekwador Manieczki'
+    }
+]
+photos['column_4'] = [
+    {
+        src: 'photo_8.png',
         alt: 'Ekwador Manieczki'
     }
 ]

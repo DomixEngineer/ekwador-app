@@ -4,27 +4,38 @@
             <section-header title="Galeria zdjęć z ostatnich imprez"></section-header>
         </div>
         <div class="container photos-container">
-            <div class="photos-container__column photos-container__column--first">
-                <img
-                    v-for="photo in photoGalleryList.column_1"
-                    :key="photo"
-                    :src="getImage(photo.src)" 
-                    alt="" 
-                    class="photos-container__column__single-photo"
-                >
+            <div class="container-flex row row--first">
+                <div class="photos-container__column photos-container__column--first">
+                    <img
+                        v-for="photo in photoGalleryList.column_1"
+                        :key="photo"
+                        :src="getImage(photo.src)" 
+                        alt="" 
+                        class="photos-container__column__single-photo"
+                    >
+                </div>
+                <div class="photos-container__column photos-container__column--second">
+                    <img
+                        v-for="photo in photoGalleryList.column_2"
+                        :key="photo"
+                        :src="getImage(photo.src)" 
+                        alt="" 
+                        class="photos-container__column__single-photo"
+                    >
+                </div>
+                <div class="photos-container__column photos-container__column--third">
+                    <img
+                        v-for="photo in photoGalleryList.column_3"
+                        :key="photo"
+                        :src="getImage(photo.src)" 
+                        alt="" 
+                        class="photos-container__column__single-photo"
+                    >
+                </div>
             </div>
-            <div class="photos-container__column photos-container__column--second">
+            <div class="container row row--second">
                 <img
-                    v-for="photo in photoGalleryList.column_2"
-                    :key="photo"
-                    :src="getImage(photo.src)" 
-                    alt="" 
-                    class="photos-container__column__single-photo"
-                >
-            </div>
-            <div class="photos-container__column photos-container__column--third">
-                <img
-                    v-for="photo in photoGalleryList.column_3"
+                    v-for="photo in photoGalleryList.column_4"
                     :key="photo"
                     :src="getImage(photo.src)" 
                     alt="" 
@@ -57,21 +68,32 @@ export default {
     },
     beforeMount() {
         this.photoGalleryList = Photos;
-        console.log('Zdjecia', Photos.column_1)
     }
 }
 </script>
-
-<style lang="scss">
+ 
+<style lang="scss" scoped>
+.row {
+    &--second {
+        margin-top: 35px;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
 .photos-container {
     background-color: #21306f;
     width: 100%;
     margin-bottom: 25px;
-    display: flex;
-    flex-wrap: wrap;
     padding: 15px;
     box-sizing: border-box;
-    justify-content: space-between;
     &__column {
         display: flex;
         flex-direction: column;
