@@ -2,12 +2,25 @@
     <div class="page-slider">
 
         <div class="page-slider__slides">
-            <div class="page-slider__slides__single-slide first_slide"></div>
             <div 
-                class="page-slider__slides__single-slide second_slide in-active">
+                class="page-slider__slides__single-slide first_slide"
+                :class="{
+                    'in-active': currentSlide !== 0
+                }"
+            >
             </div>
             <div 
-                class="page-slider__slides__single-slide third_slide in-active"
+                class="page-slider__slides__single-slide second_slide"
+                :class="{
+                    'in-active': currentSlide !== 1
+                }"
+            >
+            </div>
+            <div 
+                class="page-slider__slides__single-slide third_slide"
+                :class="{
+                    'in-active': currentSlide !== 2
+                }"
             >
 
             </div>
@@ -20,6 +33,12 @@
             <div class="page-slider__arrows__arrow--right">
                 <img src="../assets/images/slider/right_arrow.png" alt="" @click="next" />
             </div>
+        </div>
+
+        <div class="page-slider__dotts">
+            <div class="page-slider__dotts_dott"></div>
+            <div class="page-slider__dotts_dott"></div>
+            <div class="page-slider__dotts_dott"></div>
         </div>
 
     </div>
@@ -41,14 +60,15 @@ export default {
                 this.currentSlide = this.slides + 1
             }
             this.currentSlide--
-            console.log(this.currentSlide)
         },
         next() {
             if (this.currentSlide >= 2) {
                 this.currentSlide = -1
             }
             this.currentSlide++
-            console.log(this.currentSlide)
+        },
+        goToSlide(slide) {
+            this.currentSlide = slide
         }
     }
 }
@@ -89,15 +109,23 @@ export default {
     }
     .first_slide {
         background-image: url('../assets/images/slider/first_slide_bg.png');
+        background-position: center;
     }
     .second_slide {
         background-image: url('../assets/images/slider/second_slide_bg.jpg');
+        background-position: center;
+    }
+    .third_slide {
+        background-image: url('../assets/images/slider/third_slide_bg.jpg');
+        background-position: center;
     }
     .active {
         left: 0;
+        transition: left 0.5s;
     }
     .in-active {
         left: -100%;
+        transition: left 0.5s;
     }
     
 </style>
