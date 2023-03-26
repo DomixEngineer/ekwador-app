@@ -1,7 +1,7 @@
 <template>
     <div class="single-poster">
         <img 
-            :src="renderImage()" 
+            :src="renderImage(year)" 
             :alt="'Ekwador Manieczki - ' + partyTitle" 
         />
         <div class="single-poster__hover-overlay">
@@ -38,11 +38,16 @@ export default {
             type: String,
             required: false,
             default: '09.04.2023r'
+        },
+        year: {
+            type: String,
+            required: false,
+            default: '2023'
         }
     },
     methods: {
-        renderImage() {
-            return require(`../assets/images/party_posters/2023/${this.pictureLink}`)
+        renderImage(year) {
+            return require(`../assets/images/party_posters/${year}/${this.pictureLink}`)
         },
         redirectToParty() {
             this.$router.push({ name: 'PartyPreview', params: { party: this.partyId } })

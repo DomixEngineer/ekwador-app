@@ -15,6 +15,7 @@
             :partyTitle="party.title"
             :partyDate="party.date"
             :pictureLink="party.picture"
+            :year="party.year"
             ></single-party-poster>
         </div>
     </div>
@@ -24,6 +25,8 @@
 import SectionHeader from '@/components/SectionHeader.vue'
 import SinglePartyPoster from '@/components/SinglePartyPoster.vue'
 import parties from '../mock/parties.js'
+import _ from 'lodash'
+
 export default {
     components: {
         SectionHeader,
@@ -31,9 +34,17 @@ export default {
     },
     data() {
         return {
-            // HTTP REQUEST DATA MOCK
-            parties: parties
+            parties: []
         }
+    },
+    methods: {
+        getLatestLimitedParties() {
+            const partiesArr = _.take(parties, 3)
+            this.parties = partiesArr
+        }
+    },
+    created() {
+        this.getLatestLimitedParties();
     }
 }
 </script>
