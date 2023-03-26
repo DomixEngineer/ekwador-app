@@ -13,7 +13,11 @@
             <p class="single-party-data__content-text">
                 {{ partyData.partyDescription }}
             </p>
-            <img :src="getPartyPoster()" :alt="partyData.title" class="single-party-data__party-poster" />
+            <img 
+                :src="getPartyPoster(partyData.year)" 
+                :alt="partyData.title" 
+                class="single-party-data__party-poster"
+             />
         </div>
         <div class="single-party-mini-photos right-col">
             <img 
@@ -61,8 +65,8 @@ export default {
                 return party.id == this.$route.params.party
             })
         },
-        getPartyPoster() {
-            return require('../assets/images/party_posters/2023/' + this.partyData.picture)
+        getPartyPoster(year = 2023) {
+            return require(`../assets/images/party_posters/${year}/${this.partyData.picture}`)
         },
         getRandomPhotos() {
             getRandomPhotos(3, photos, this)
@@ -105,6 +109,7 @@ export default {
         padding: 15px;
         box-sizing: border-box;
         max-width: 811px;
+        height: fit-content;
         &__header {
             color: white;
             font-family: 'lato';
