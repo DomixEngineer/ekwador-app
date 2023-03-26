@@ -5,6 +5,12 @@ export default [
         link: '/',
         translated: 'start'
     },
+    {
+        id: 1,
+        name: 'Parties',
+        link: '/parties',
+        translated: 'imprezy'
+    },
     // {
     //     id: 1,
     //     name: 'imprezy',

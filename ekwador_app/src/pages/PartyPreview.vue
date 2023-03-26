@@ -37,6 +37,7 @@ import SectionHeader from '@/components/SectionHeader.vue'
 import parties from '../mock/parties.js'
 import CountdownTimer from '@/components/CountdownTimer.vue'
 import photos from '../mock/allPhotos.js'
+import { getRandomPhotos } from '../services/functions.js'
 import _ from 'lodash';
 
 export default {
@@ -63,14 +64,8 @@ export default {
         getPartyPoster() {
             return require('../assets/images/party_posters/2023/' + this.partyData.picture)
         },
-        getRandomPhotos(photoCount) {
-            const allPhotos = photos
-            const randomPhotos = []
-            for (let counter = 0; counter <= photoCount; counter++) {
-                let randomElement = _.sample(allPhotos)
-                randomPhotos.push(randomElement)
-            }
-            this.randomPhotos = randomPhotos;
+        getRandomPhotos() {
+            getRandomPhotos(3, photos, this)
         },
         getImg(imgFileName) {
             return require(`../assets/images/photo_gallery/${imgFileName}`)
@@ -78,7 +73,7 @@ export default {
     },
     created() {
         this.getPartyDetails()
-        this.getRandomPhotos(3)
+        this.getRandomPhotos()
     }
 }
 </script>

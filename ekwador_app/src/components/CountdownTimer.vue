@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import moment from 'moment'
+import { checkIfDateIsAfter, calcDate } from '../services/functions.js'
+
 export default {
     name: 'CountdownTimer',
     props: {
@@ -39,27 +40,10 @@ export default {
     },
     methods: {
         calcDate() {
-            if (this.checkIfDateIsAfter()) {
-                this.isAfterDate = true
-                return;
-            }
-            let m1 = moment(moment(), 'DD-MM-YYYY HH:mm'); // Today
-            let m2 = moment(this.endDate, 'DD-MM-YYYY HH:mm'); // end date
-            let m3 = m2.diff(m1,'minutes');
-            let numdays = Math.floor(m3 / 1440);
-            let numhours = Math.floor((m3 % 1440) / 60);
-            let numminutes = Math.floor((m3 % 1440) % 60);
-            this.remainingDays = numdays
-            this.remainingHours = numhours
-            this.remainingMinutes = numminutes
+            calcDate(this)
         },
         checkIfDateIsAfter() {
-            let startDate = moment(moment(), "DD/MM/YYYY");
-            let endDate = moment(this.endDate, "DD/MM/YYYY");
-            let difference = startDate.diff(endDate, 'days')
-            if (difference >= 0) {
-                return true
-            }
+            checkIfDateIsAfter(this)
         }
     },
     mounted() {
