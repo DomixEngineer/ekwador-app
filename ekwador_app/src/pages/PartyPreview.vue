@@ -2,8 +2,8 @@
     <div class="top-header-bg">
     </div>
     <section-header :title="partyData.title + ' ' + partyData.date"></section-header>
-    <div class="container">
-        <div class="single-party-data">
+    <div class="container flex-container">
+        <div class="single-party-data left-col">
             <h1 class="single-party-data__header">{{ partyData.title }} {{ partyData.date }}</h1>
             <h3 class="single-party-data__subheader">do imprezy pozostało:</h3>
             <div class="single-party-data__count">
@@ -14,6 +14,14 @@
                 {{ partyData.partyDescription }}
             </p>
             <img :src="getPartyPoster()" :alt="partyData.title" class="single-party-data__party-poster" />
+        </div>
+        <div class="single-party-mini-photos right-col">
+            <img 
+                class="single-party-mini-photos__mini-photo"
+                v-for="photo in randomPhotos"
+                :key="photo"
+                :src="getImg(photo.src)"
+            >
         </div>
     </div>
     <upcoming-parties></upcoming-parties>
@@ -28,6 +36,7 @@ import PromoSection from '@/components/PromoSection.vue'
 import SectionHeader from '@/components/SectionHeader.vue'
 import parties from '../mock/parties.js'
 import CountdownTimer from '@/components/CountdownTimer.vue'
+import photos from '../mock/allPhotos.js'
 import _ from 'lodash';
 
 export default {
@@ -41,7 +50,8 @@ export default {
     },
     data() {
         return {
-            partyData: {}
+            partyData: {},
+            randomPhotos: []
         }
     },
     methods: {
@@ -52,10 +62,23 @@ export default {
         },
         getPartyPoster() {
             return require('../assets/images/party_posters/2023/' + this.partyData.picture)
+        },
+        getRandomPhotos(photoCount) {
+            const allPhotos = photos
+            const randomPhotos = []
+            for (let counter = 0; counter <= photoCount; counter++) {
+                let randomElement = _.sample(allPhotos)
+                randomPhotos.push(randomElement)
+            }
+            this.randomPhotos = randomPhotos;
+        },
+        getImg(imgFileName) {
+            return require(`../assets/images/photo_gallery/${imgFileName}`)
         }
     },
     created() {
         this.getPartyDetails()
+        this.getRandomPhotos(3)
     }
 }
 </script>
@@ -65,6 +88,11 @@ export default {
     @mixin background-opacity($color, $opacity: 0.3) {
         background: $color; /* The Fallback */
         background: rgba($color, $opacity);
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
     }
 
     .top-header-bg {
@@ -117,5 +145,17 @@ export default {
             width: 100%;
         }
     }
-
+    .single-party-mini-photos {
+        max-width: 340px;
+        width: 100%;
+        @include background-opacity(#3b3b98, 0.4);
+        padding: 15px;
+        box-sizing: border-box;
+        height: fit-content;
+        &__mini-photo {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
 </style>
