@@ -32,4 +32,9 @@ const router = createRouter({
     routes
 })
 
+// Scroll to window top after every route movement
+router.beforeEach(() => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+})
+
 export default router;

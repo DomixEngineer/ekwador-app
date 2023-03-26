@@ -43,6 +43,8 @@ export default {
         width: 100%;
         height: 59px;
         padding: 7px 0px;
+        position: relative;
+        z-index: 999;
         &__container {
             display: flex;
             align-items: center;
