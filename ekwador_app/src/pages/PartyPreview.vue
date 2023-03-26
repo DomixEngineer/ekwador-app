@@ -7,18 +7,7 @@
             <h1 class="single-party-data__header">{{ partyData.title }} {{ partyData.date }}</h1>
             <h3 class="single-party-data__subheader">do imprezy pozostało:</h3>
             <div class="single-party-data__count">
-                <div class="single-party-data__count__single-element">
-                    <h1 class="single-party-data__count__single-element__main-value">17</h1>
-                    <h3 class="single-party-data__count__single-element__main-value-title">dni</h3>
-                </div>
-                <div class="single-party-data__count__single-element">
-                    <h1 class="single-party-data__count__single-element__main-value">12</h1>
-                    <h3 class="single-party-data__count__single-element__main-value-title">godzin</h3>
-                </div>
-                <div class="single-party-data__count__single-element">
-                    <h1 class="single-party-data__count__single-element__main-value">45</h1>
-                    <h3 class="single-party-data__count__single-element__main-value-title">minut</h3>
-                </div>
+                <countdown-timer :endDate="partyData.dateFormat"></countdown-timer>
             </div>
             <h2 class="single-party-data__small-header">Opis wydarzenia</h2>
             <p class="single-party-data__content-text">
@@ -50,6 +39,7 @@ import TransportCards from '@/page_parts/TransportCards.vue'
 import PromoSection from '@/components/PromoSection.vue'
 import SectionHeader from '@/components/SectionHeader.vue'
 import parties from '../mock/parties.js'
+import CountdownTimer from '@/components/CountdownTimer.vue'
 import _ from 'lodash';
 
 export default {
@@ -58,7 +48,8 @@ export default {
         UpcomingParties,
         TransportCards,
         PromoSection,
-        SectionHeader
+        SectionHeader,
+        CountdownTimer
     },
     data() {
         return {
@@ -136,27 +127,6 @@ export default {
         &__party-poster {
             display: block;
             width: 100%;
-        }
-        &__count {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 220px;
-            &__single-element {
-                text-align: center;
-                margin-top: 20px;
-                &__main-value {
-                    color: white;
-                    font-family: 'lato';
-                    margin: 0;
-                }
-                &__main-value-title {
-                    color: white;
-                    font-family: 'lato';
-                    font-weight: 300;
-                    margin: 0;
-                }
-            }
         }
     }
 
