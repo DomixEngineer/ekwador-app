@@ -2,7 +2,9 @@
   <navbar></navbar>
   <router-view v-slot="{ Component }">
     <transition name="route">
-      <component :is="Component" />
+      <div :key="$route.fullPath">
+        <component :is="Component" />
+      </div>
     </transition>
   </router-view>
   <app-footer></app-footer>
