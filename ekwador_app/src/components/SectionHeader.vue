@@ -55,12 +55,19 @@ export default {
         padding-top: 20px;
         margin-bottom: 32px;
         margin-top: 45px;
+        @media (max-width: 767px) {
+            max-width: 90%;
+            margin: 12vh auto 4vh auto;
+        }
         &__header {
             color: white;
             font-family: 'lato';
             text-transform: uppercase;
             margin: 0;
             padding: 0 0 15px 20px;
+            @media (max-width: 767px) {
+                font-size: 5vw;
+            }
         }
         &__decorator {
             height: 3px;

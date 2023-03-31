@@ -51,17 +51,29 @@ export default {
         display: block;
         width: 1.5vw;
         cursor: pointer;
+        @media (max-width: 767px) {
+            width: 100%;
+            max-width: 50px;
+            display: block;
+            margin: 4vh auto;
+        }
     }
     .footer {
         background-color: #0652dd;
         height: 70px;
         display: flex;
         align-items: center;
+        @media (max-width: 767px) {
+            height: auto;
+        }
         &__container {
             height: inherit;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @media (max-width: 767px) {
+                display: block;
+            }
             &__copyright {
                 p {
                     margin: 0;
@@ -70,11 +82,24 @@ export default {
                     font-family: 'lato';
                     font-weight: 300;
                     width: 61%;
+                    @media (max-width: 767px) {
+                        display: block;
+                        text-align: center;
+                        width: fit-content;
+                        margin-top: 2vh;
+                        margin-bottom: 4vh;
+                        text-align: center;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
                 }
             }
             &__menu {
                 max-width: 600px;
                 width: 100%;
+                @media (max-width: 767px) {
+                    max-width: 100%;
+                }
                 &__list {
                     list-style: none;
                     display: flex;
@@ -82,6 +107,9 @@ export default {
                     width: 100%;
                     margin: 0;
                     padding: 0;
+                    @media (max-width: 767px) {
+                        display: block;
+                    }
                     &__item {
                         color: white;
                         font-family: 'lato';
@@ -89,6 +117,13 @@ export default {
                         font-size: 18px;
                         cursor: pointer;
                         margin-right: 20px;
+                        @media (max-width: 767px) {
+                            display: block;
+                            text-align: center;
+                            margin-bottom: 2vh;
+                            margin-right: 0;
+                            font-size: 6vw;
+                        }
                     }
                 }
             }

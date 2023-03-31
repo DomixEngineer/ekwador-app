@@ -92,6 +92,9 @@ export default {
     .flex-container {
         display: flex;
         justify-content: space-between;
+        @media (max-width: 767px) {
+            display: block;
+        }
     }
 
     .top-header-bg {
@@ -110,6 +113,10 @@ export default {
         box-sizing: border-box;
         max-width: 811px;
         height: fit-content;
+        @media (max-width: 767px) {
+            max-width: 90%;
+            margin: 0 auto;
+        }
         &__header {
             color: white;
             font-family: 'lato';
@@ -152,6 +159,10 @@ export default {
         padding: 15px;
         box-sizing: border-box;
         height: fit-content;
+        @media (max-width: 767px) {
+            max-width: 90%;
+            margin: 0 auto;
+        }
         &__mini-photo {
             display: block;
             width: 100%;

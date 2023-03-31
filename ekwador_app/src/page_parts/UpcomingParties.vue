@@ -58,6 +58,18 @@ export default {
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;   
+        justify-content: space-between;
+        @media (max-width: 767px) {
+            max-width: 90%;
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+        .single-poster {
+            @media (max-width: 767px) {
+                max-width: 80%;
+                margin-bottom: 5vh;
+            }
+        }
     }
 </style>

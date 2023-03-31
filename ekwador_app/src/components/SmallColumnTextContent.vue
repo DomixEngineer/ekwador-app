@@ -33,6 +33,11 @@ export default {
         width: 100%;
         box-sizing: border-box;
         background-color: #21306f;
+        @media (max-width: 767px) {
+            max-width: 90%;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
         .decorator {
             display: flex;
             &__left {

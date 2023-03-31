@@ -61,6 +61,9 @@ export default {
         max-width: 347px;
         width: 100%;
         position: relative;
+        @media (max-width: 767px) {
+            margin: 0 auto;
+        }
         img {
             display: block;
             width: 100%;

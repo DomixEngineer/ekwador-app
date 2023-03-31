@@ -42,5 +42,8 @@ export default {
     .flex-container {
         display: flex;
         justify-content: space-between;
+        @media (max-width: 767px) {
+            display: block;
+        }
     }
 </style>

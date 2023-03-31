@@ -102,6 +102,9 @@ export default {
 .flex-container {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 767px) {
+        display: block;
+    }
 }
 .left-column {
     @include background-opacity(#3b3b98, 0.4);
@@ -109,6 +112,10 @@ export default {
     box-sizing: border-box;
     max-width: 811px;
     width: 100%;
+    @media (max-width: 767px) {
+        max-width: 90%;
+        margin: 0 auto;
+    }
 }
 .right-column {
     @include background-opacity(#3b3b98, 0.4);
@@ -116,6 +123,11 @@ export default {
     width: 100%;
     padding: 15px;
     height: fit-content;
+    box-sizing: border-box;
+    @media (max-width: 767px) {
+        max-width: 90%;
+        margin: 4vh auto;
+    }
     img {
         display: block;
         width: 100%;
@@ -128,11 +140,22 @@ export default {
         display: flex;
         justify-content: space-between;
         margin-bottom: 35px;
+        @media (max-width: 767px) {
+            display: block;
+        }
         &__poster {
             width: 45%;
+            @media (max-width: 767px) {
+                width: 100%;
+            }
         }
         &__data {
             width: 50%;
+            @media (max-width: 767px) {
+                width: 75%;
+                text-align: center;
+                margin: 0 auto;
+            }
             &__header {
                 color: white;
                 font-family: 'lato';
@@ -148,6 +171,9 @@ export default {
                 box-sizing: border-box;
                 font-size: 20px;
                 width: 70%;
+                @media (max-width: 767px) {
+                    width: 100%;
+                }
                 &--year {
                     background-color: #107ef1;
                 }

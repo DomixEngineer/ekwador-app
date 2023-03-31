@@ -26,10 +26,18 @@ export default {
         img {
             display: block;
             margin: 0 auto;
+            @media (max-width: 767px) {
+                max-width: 50%;
+            }
         }
         width: 100%;
         height: 900px;
         background-image: url('../assets/images/promo_section_1.png');
+        @media (max-width: 767px) {
+            height: auto;
+            padding: 50px;
+            box-sizing: border-box;
+        }
         &__heading {
             color: white;
             font-family: 'sui-generis';
@@ -38,6 +46,9 @@ export default {
             font-size: 80px;
             margin-top: 30px;
             margin-bottom: 0;
+            @media (max-width: 767px) {
+                font-size: 8vw;
+            }
         }
     }
 </style>

@@ -51,6 +51,10 @@ export default {
         padding-bottom: 15px;
         border-radius: 12px;
         margin-bottom: 20px;
+        @media (max-width: 767px) {
+            max-width: 90%;
+            margin: 5vh auto;
+        }
         &__header {
             img {
                 display: block;

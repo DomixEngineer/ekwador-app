@@ -47,6 +47,11 @@ export default {
         background-image: url('../assets/images/newsletter_bar_bg.png');
         display: flex;
         align-items: center;
+        @media (max-width: 767px) {
+            height: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
         &__header {
             font-family: 'cascade';
             color: white;
@@ -54,11 +59,18 @@ export default {
             text-align: center;
             padding: 0;
             margin: 0;
+            @media (max-width: 767px) {
+                font-size: 8vw;
+                margin-bottom: 3vh;
+            }
         }
         &__input-bar {
             display: flex;
             justify-content: center;
             align-items: center;
+            @media (max-width: 767px) {
+                display: block;
+            }
             &__input {
                 font-family: "sui-generis";
                 outline: none;
@@ -67,6 +79,13 @@ export default {
                 padding: 10px 10px;
                 border-radius: 12px;
                 margin-right: 24px;
+                @media (max-width: 767px) {
+                    width: 80%;
+                    margin-bottom: 2vh;
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: block;
+                }
             }
             &__btn {
                 background-color: #107ef1;
@@ -77,6 +96,11 @@ export default {
                 padding: 12px 59px;
                 border-radius: 12px;
                 cursor: pointer;
+                @media (max-width: 767px) {
+                    margin-left: auto;
+                    margin-right: auto;
+                    display: block;
+                }
             }
         }
         &__reminder {
@@ -88,6 +112,10 @@ export default {
             margin: 0 auto;
             font-size: 36px;
             width: 59%;
+            @media (max-width: 767px) {
+                width: 90%;
+                margin-top: 2vh;
+            }
         }
     }
 </style>

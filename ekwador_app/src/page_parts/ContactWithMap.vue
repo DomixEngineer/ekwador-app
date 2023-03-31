@@ -38,13 +38,25 @@ export default {
     .flex-container {
         display: flex;
         justify-content: space-between;
+        @media (max-width: 767px) {
+            display: block;
+        }
         .left-column {
             max-width: 436px;
             width: 100%;
+            @media (max-width: 767px) {
+                max-width: 90%;
+                margin: 0 auto;
+            }
         }
         .right-column {
             max-width: 714px;
             width: 100%;
+            @media (max-width: 767px) {
+                max-width: 90%;
+                margin: 0 auto;
+                margin-top: 5vh;
+            }
         }
     }
 </style>

@@ -42,6 +42,9 @@ export default {
 .flex-container {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 767px) {
+        display: block;
+    }
 }
 .about-club {
     &__header {
@@ -68,6 +71,11 @@ export default {
         width: 100%;
         min-height: 676px;
         background-color: #21306f;
+        @media (max-width: 767px) {
+            max-width: 90%;
+            margin: 4vh auto;
+            min-height: unset;
+        }
         img {
             display: block;
             width: 100%;

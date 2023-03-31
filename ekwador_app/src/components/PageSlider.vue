@@ -86,6 +86,7 @@ export default {
 
 <style lang="scss" scoped>
     .page-slider {
+        display: none;
         position: relative;
         height: 100vh;
         width: 100%;
