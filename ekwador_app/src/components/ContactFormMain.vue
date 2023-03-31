@@ -106,6 +106,7 @@ export default {
                 width: 100%;
                 color: white;
                 font-size: 30px;
+                box-sizing: border-box;
                 // margin-bottom: 45px;
             }
             &__textarea-msg {
